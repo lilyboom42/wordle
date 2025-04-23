@@ -142,19 +142,20 @@ function initGame() {
 function handleKeyDown(event) {
     if (gameOver) return;
 
-    const letter = event.key && /^[a-z]$/i.test(event.key) ? event.key.toLowerCase() : null;
-
-    if (!letter) return;
-
-    if (letter === "enter") {
+    if (event.key === "Enter") {
         checkWord();
-    } else if (letter === "backspace") {
+        return;
+    } else if (event.key === "Backspace") {
         removeLetter();
-    } else {
+        return;
+    }
+
+    const letter = /^[a-z]$/i.test(event.key) ? event.key.toUpperCase() : null;
+    
+    if (letter) {
         addLetter(letter);
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', handleKeyDown);
 
@@ -162,12 +163,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.keyboard').addEventListener('click', function(event) {
         if (gameOver) return;
-
+    
         const key = event.target;
-
+    
         if (key.classList.contains('key') && key.dataset.key) {
-            const letter = key.dataset.key;
-            addLetter(letter);
+            const keyValue = key.dataset.key;
+            
+            if (keyValue === "Enter") {
+                checkWord();
+            } else if (keyValue === "Backspace") {
+                removeLetter();
+            } else {
+                addLetter(keyValue.toUpperCase());
+            }
         }
     });
 
