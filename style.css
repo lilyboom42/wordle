@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-rows: repeat(6, 60px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 5px;
+}
+.tile {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #d3d6da;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.correct {
+    background-color: #6aaa64;
+    color: white;
+    border-color: #6aaa64;
+}
+.present {
+    background-color: #c9b458;
+    color: white;
+    border-color: #c9b458;
+}
+.absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: #787c7e;
+}
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.keyboard-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+.key {
+    height: 58px;
+    min-width: 40px;
+    padding: 0 10px;
+    margin: 0 3px;
+    border-radius: 4px;
+    border: none;
+    background-color: #d3d6da;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.key-wide {
+    min-width: 65px;
+}
+.message {
+    height: 50px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+.restart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #6aaa64;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
